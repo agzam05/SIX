@@ -1,24 +1,42 @@
 #1
-import datetime
-new_date=datetime.datetime.now()-datetime.timedelta(days=5)
-print(new_date)
-
+import re
+a=input()
+arr=re.fullmatch("[a][b]*",a)
+if arr:
+    print(arr.group())
+else:
+    print("none")
 #2
-from datetime import datetime,timedelta
-yes=datetime.now()-timedelta(days=1)
-today=datetime.now()
-tom=datetime.now()+timedelta(days=1)
-print("Yesterday:",yes)
-print("Today:",today)
-print("Tomorrow:",tom)
-
+import re
+a=input()
+arr=re.fullmatch("[a][b]{3}",a)
+ar=re.fullmatch("[a][b]{2}",a)
+if arr:
+    print(arr.group())
+elif ar:
+    print(ar.group())
+else:
+    print("none")
 #3
-from datetime import datetime
-date1=datetime.now()
-print(date1.strftime("%Y-%m-%d-%H-%M-%S"))
-
+import re
+a=input()
+arr=re.findall(r"^[a-z]+_[a-z]+",a)
+print(arr)
 #4
-from datetime import datetime, timedelta
-diff=today-yes
-hours=diff.total_seconds()/3600
-print(hours)
+import re
+a=input()
+arr=re.findall(r"[A-Z]+[a-z]+",a)
+print(arr)
+#5
+import re
+a=input()
+arr=re.findall("^[a]+\w*[b]$",a)
+print(arr)
+#6
+import re
+a=input()
+arr=re.sub("[.]",":",a)
+arr=re.sub("[,]",":",a)
+arr=re.sub("[ ]",":",a)
+print(arr)
+#7
